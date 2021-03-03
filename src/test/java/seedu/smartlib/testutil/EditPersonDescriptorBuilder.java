@@ -5,11 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import seedu.smartlib.logic.commands.EditCommand.EditPersonDescriptor;
-import seedu.smartlib.model.reader.Address;
-import seedu.smartlib.model.reader.Email;
-import seedu.smartlib.model.reader.Name;
-import seedu.smartlib.model.reader.Phone;
-import seedu.smartlib.model.reader.Reader;
+import seedu.smartlib.model.reader.*;
 import seedu.smartlib.model.tag.Tag;
 
 /**
@@ -36,6 +32,7 @@ public class EditPersonDescriptorBuilder {
         descriptor.setPhone(reader.getPhone());
         descriptor.setEmail(reader.getEmail());
         descriptor.setAddress(reader.getAddress());
+        descriptor.setRemark(reader.getRemark());
         descriptor.setTags(reader.getTags());
     }
 
@@ -70,6 +67,13 @@ public class EditPersonDescriptorBuilder {
         descriptor.setAddress(new Address(address));
         return this;
     }
+    /**
+     * Sets the {@code Remark} of the {@code EditPersonDescriptor} that we are building.
+     */
+    public EditPersonDescriptorBuilder withRemark(String remark) {
+        descriptor.setRemark(new Remark(remark));
+        return this;
+    }
 
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code EditPersonDescriptor}
@@ -84,4 +88,7 @@ public class EditPersonDescriptorBuilder {
     public EditPersonDescriptor build() {
         return descriptor;
     }
+
+
+
 }

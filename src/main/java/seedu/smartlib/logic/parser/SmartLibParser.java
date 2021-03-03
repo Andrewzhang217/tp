@@ -6,15 +6,7 @@ import static seedu.smartlib.commons.core.Messages.MESSAGE_UNKNOWN_COMMAND;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import seedu.smartlib.logic.commands.AddCommand;
-import seedu.smartlib.logic.commands.ClearCommand;
-import seedu.smartlib.logic.commands.Command;
-import seedu.smartlib.logic.commands.DeleteCommand;
-import seedu.smartlib.logic.commands.EditCommand;
-import seedu.smartlib.logic.commands.ExitCommand;
-import seedu.smartlib.logic.commands.FindCommand;
-import seedu.smartlib.logic.commands.HelpCommand;
-import seedu.smartlib.logic.commands.ListCommand;
+import seedu.smartlib.logic.commands.*;
 import seedu.smartlib.logic.parser.exceptions.ParseException;
 
 /**
@@ -67,6 +59,9 @@ public class SmartLibParser {
 
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
+
+        case RemarkCommand.COMMAND_WORD:
+            return new RemarkCommandParser().parse(arguments);
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
