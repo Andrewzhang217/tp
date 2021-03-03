@@ -35,8 +35,6 @@ public class ReaderCard extends UiPart<Region> {
     @FXML
     private Label phone;
     @FXML
-    private Label address;
-    @FXML
     private Label email;
     @FXML
     private FlowPane tags;
@@ -50,7 +48,6 @@ public class ReaderCard extends UiPart<Region> {
         id.setText(displayedIndex + ". ");
         name.setText(reader.getName().fullName);
         phone.setText(reader.getPhone().value);
-        address.setText(reader.getAddress().value);
         email.setText(reader.getEmail().value);
         reader.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))

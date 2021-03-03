@@ -9,7 +9,6 @@ import java.util.Set;
 import seedu.smartlib.commons.core.index.Index;
 import seedu.smartlib.commons.util.StringUtil;
 import seedu.smartlib.logic.parser.exceptions.ParseException;
-import seedu.smartlib.model.reader.Address;
 import seedu.smartlib.model.reader.Email;
 import seedu.smartlib.model.reader.Name;
 import seedu.smartlib.model.reader.Phone;
@@ -63,21 +62,6 @@ public class ParserUtil {
             throw new ParseException(Phone.MESSAGE_CONSTRAINTS);
         }
         return new Phone(trimmedPhone);
-    }
-
-    /**
-     * Parses a {@code String address} into an {@code Address}.
-     * Leading and trailing whitespaces will be trimmed.
-     *
-     * @throws ParseException if the given {@code address} is invalid.
-     */
-    public static Address parseAddress(String address) throws ParseException {
-        requireNonNull(address);
-        String trimmedAddress = address.trim();
-        if (!Address.isValidAddress(trimmedAddress)) {
-            throw new ParseException(Address.MESSAGE_CONSTRAINTS);
-        }
-        return new Address(trimmedAddress);
     }
 
     /**

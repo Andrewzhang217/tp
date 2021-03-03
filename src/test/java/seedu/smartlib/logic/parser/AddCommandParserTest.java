@@ -32,7 +32,6 @@ import static seedu.smartlib.testutil.TypicalPersons.BOB;
 import org.junit.jupiter.api.Test;
 
 import seedu.smartlib.logic.commands.AddCommand;
-import seedu.smartlib.model.reader.Address;
 import seedu.smartlib.model.reader.Email;
 import seedu.smartlib.model.reader.Name;
 import seedu.smartlib.model.reader.Phone;

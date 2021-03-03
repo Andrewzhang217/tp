@@ -3,7 +3,6 @@ package seedu.smartlib.testutil;
 import java.util.HashSet;
 import java.util.Set;
 
-import seedu.smartlib.model.reader.Address;
 import seedu.smartlib.model.reader.Email;
 import seedu.smartlib.model.reader.Name;
 import seedu.smartlib.model.reader.Phone;
